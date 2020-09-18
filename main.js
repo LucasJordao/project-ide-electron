@@ -11,5 +11,6 @@ app.on('ready', () => {
     });
 
     mainWindow.loadURL(resolve('file://', __dirname, 'src', 'view', 'index.html'));
+    
 });
 
