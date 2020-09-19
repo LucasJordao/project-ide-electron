@@ -1,13 +1,15 @@
 const { remote } = require('electron');
+const $ = require('jquery');
 const win = remote.getCurrentWindow();
 
 function checkPlatform(){
-    process.platform == 'win32' ? document.querySelector('.titlebar').setAttribute('id', 'title-bar') : document.querySelector('.titlebar').setAttribute('id', '');
+    process.platform !== 'win32' ? document.querySelector('.titlebar').setAttribute('id', 'notitle') : document.querySelector('.titlebar').setAttribute('id', 'title-bar');
 }
 
 document.onreadystatechange = (event) => {
     if(document.readyState == "complete"){
         handleWindowControls();
+        checkPlatform();
     }
 }
 
@@ -15,21 +17,21 @@ window.onbeforeunload = (event) => {
     win.removeAllListeners();
 }
 
-
 function handleWindowControls() {
-    document.getElementById('min-button').addEventListener("click", event => {
+
+    $('#min-button').click(() => {
         win.minimize();
     });
-
-    document.getElementById('max-button').addEventListener('click', event => {
+    
+    $('#max-button').click(() => {
         win.maximize();
     });
-
-    document.getElementById('restore-button').addEventListener('click', event => {
+    
+    $('#restore-button').click(() => {
         win.unmaximize();
     });
-
-    document.getElementById('close-button').addEventListener('click', event => {
+    
+    $('#close-button').click(() => {
         win.close();
     });
 
@@ -43,5 +45,5 @@ function handleWindowControls() {
         }else{
             document.body.classList.remove('maximized');
         }
-    }
+    }   
 }

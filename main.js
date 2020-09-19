@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, globalShortcut } = require('electron');
 const { resolve } = require('path');
 let mainWindow;
 
@@ -8,7 +8,7 @@ app.on('ready', () => {
             nodeIntegration: true,
             enableRemoteModule: true
         },
-        frame: false,
+        frame: process.platform !== 'darwin' ? false : true,
         show: false
     });
     mainWindow.maximize();
@@ -16,6 +16,18 @@ app.on('ready', () => {
     mainWindow.loadURL(resolve('file://', __dirname, 'src', 'view', 'index.html'));
     
 });
+
+// app.on('browser-window-focus', function () {
+//     globalShortcut.register('CommandOrControl+R', () => false);
+//     globalShortcut.register('CommandOrControl+Shift+R', () => false);
+//     globalShortcut.register('F5', () => false);
+// });
+    
+// app.on('browser-window-blur', function () {
+//     globalShortcut.unregister('CommandOrControl+R');
+//     globalShortcut.unregister('CommandOrControl+Shift+R');
+//     globalShortcut.unregister('F5');
+// });
 
 app.on('window-all-closed', () => {
     if(process.platform !== 'darwin'){

@@ -2,9 +2,20 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body onload="checkPlatform()">
-    <header class="titlebar">
+<body>
+    <header class="titlebar" id="notitle">
         <div id="drag-region">
+            <!-- Area do icone e do menu -->
+            <div class="titlebar-area menu-icon">
+
+            </div>
+
+            <!-- Area do titulo -->
+            <div class="titlebar-area title">
+              <span>Sayrla William</span>
+            </div>
+
+            <!-- Area de controladores -->
             <div id="window-controls">
                 <div class="button" id="min-button">
                   <img class="icon" srcset="../assets/icons/min-w-10.png 1x , ../assets/icons/min-w-12.png 1.25x, ../assets/icons/min-w-15.png 1.5x, ../assets/icons/min-w-15.png 1.75x, ../assets/icons/min-w-20.png 2x, ../assets/icons/min-w-20.png 2.25x, ../assets/icons/min-w-24.png 2.5x, ../assets/icons/min-w-30.png 3x, ../assets/icons/min-w-30.png 3.5x" draggable="false" />
