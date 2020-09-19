@@ -23,10 +23,9 @@ html, body{
 
 #window-controls{
     height:100%;
-    float:right;
     display:grid;
     grid-template-columns: repeat(3, 46px);
-
+    float:right;
 }
 
 #window-controls .button{
@@ -83,4 +82,17 @@ html, body{
     width: 10px;
     height: 10px;
   }
+}
+
+.maximized #titlebar {
+  width: 100%;
+  padding: 0;
+}
+
+.maximized #restore-button {
+  display: flex !important;
+}
+
+.maximized #max-button {
+  display: none;
 }
