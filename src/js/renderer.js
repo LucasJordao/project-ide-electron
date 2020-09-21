@@ -47,3 +47,22 @@ function handleWindowControls() {
         }
     }   
 }
+
+
+// Lógica do split
+
+let mouse_is_down = false;
+
+$('.split-bar').mousedown(e => {
+    mouse_is_down = true;
+})
+
+$(document).mousemove(e => {
+    if(!mouse_is_down) return;
+
+    $('.split-left').width(e.clientX);
+})
+
+$(document).mouseup(() => {
+    mouse_is_down = false;
+})
