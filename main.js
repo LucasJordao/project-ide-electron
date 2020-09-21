@@ -9,7 +9,10 @@ app.on('ready', () => {
             enableRemoteModule: true
         },
         frame: process.platform !== 'darwin' ? false : true,
-        show: false
+        show: false,
+        minWidth: 700,
+        minHeight: 500,
+        icon: __dirname + '/src/assets/img/ico-color.svg'
     });
     mainWindow.maximize();
     mainWindow.show();

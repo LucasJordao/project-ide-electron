@@ -2,17 +2,38 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="noselect">
     <header class="titlebar" id="notitle">
         <div id="drag-region">
             <!-- Area do icone e do menu -->
             <div class="titlebar-area menu-icon">
-
+              <div class="ico"></div>
+              <div class="menu-bar">
+                <ul class="main-menu menu">
+                  <li class="item disable">
+                    <span>Arquivo</span>
+                    <ul class="sub-menu">
+                      <li><div><span class="text-options">Novo Arquivo</span> <span class="shortcut-key">Ctrl+N</span></div></li>
+                      <li><div><span class="text-options">Abrir Arquivo</span> <span class="shortcut-key">Ctrl+O</span></div></li>
+                      <li><div><span class="text-options">Salvar</span> <span class="shortcut-key">Ctrl+S</span></div></li>
+                      <li><div><span class="text-options">Abrir Pasta</span> <span class="shortcut-key">Ctrl+K+Ctrl+O</span></div></li>
+                    </ul>
+                  </li>
+                  <li class="item disable">
+                    <span>Sobre</span>
+                    <ul class="sub-menu">
+                      <li><div><span class="text-options">Sobre Desenvolvedor</span> <span class="shortcut-key">F9</span></div></li>
+                      <li><div><span class="text-options">Sobre projeto</span> <span class="shortcut-key">F10</span></div></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              
             </div>
 
             <!-- Area do titulo -->
             <div class="titlebar-area title">
-              <span>Sayrla William</span>
+              <span>Laravel Generate Code</span>
             </div>
 
             <!-- Area de controladores -->
@@ -36,5 +57,9 @@
         </div>
     </header>
 
+    <div class="content">
+
+    </div>
     <script src="../js/renderer.js"></script>
+    <script src="../js/menu.js"></script>
 </body>
