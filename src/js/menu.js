@@ -1,4 +1,5 @@
-﻿var active = false;
+﻿const menu = require('../assets/js/menu-functions');
+var active = false;
 
 $('ul.main-menu > li > span').click(function(e) {
     target = $(e.target);
@@ -41,8 +42,27 @@ function teste2(x){
     return;
 }
 
+$('ul.main-menu > li > ul> li').click(e => {
+    active = false;
+    $('ul.main-menu > li').addClass('disable');
+    $('ul.main-menu > li').removeClass('active');
+})
+
+
 $('.content').click(e => {
     active = false;
     $('ul.main-menu > li').addClass('disable');
     $('ul.main-menu > li').removeClass('active');
 });
+
+
+
+$('#about_developer').click(e => {
+    menu.aboutDeveloper();
+});
+  
+$('#about_project').click(e => {
+    menu.aboutProject();
+});
+
+

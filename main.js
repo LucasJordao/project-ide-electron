@@ -1,5 +1,6 @@
-const { app, BrowserWindow, globalShortcut } = require('electron');
+const { app, BrowserWindow, Menu, globalShortcut } = require('electron');
 const { resolve } = require('path');
+const menu = require('./src/assets/js/menu-functions');
 let mainWindow;
 
 app.on('ready', () => {
@@ -12,12 +13,13 @@ app.on('ready', () => {
         show: false,
         minWidth: 700,
         minHeight: 500,
-        icon: __dirname + '/src/assets/img/ico-color.svg'
+        icon: resolve(__dirname,'src', 'assets','img','ico-color.svg')
     });
     mainWindow.maximize();
     mainWindow.show();
     mainWindow.loadURL(resolve('file://', __dirname, 'src', 'view', 'index.html'));
-    
+    const mainMenu = Menu.buildFromTemplate(menuTemplate);
+    Menu.setApplicationMenu(mainMenu);
 });
 
 // app.on('browser-window-focus', function () {
@@ -38,3 +40,41 @@ app.on('window-all-closed', () => {
     }
 });
 
+const menuTemplate = [
+    {
+        label: 'Arquivo',
+        submenu: [
+            {
+                label: 'Novo Arquivo'
+            },
+            {
+                label: 'Abrir Arquivo'
+            },
+            {
+                label: 'Salvar'
+            },
+            {
+                label: 'Abrir Pasta'
+            }
+        ]
+    },
+    {
+        label: 'Sobre',
+        submenu: [
+            {
+                label: 'Sobre Desenvolvedor',
+                accelerator: 'F9',
+                click(){
+                    menu.aboutDeveloper();
+                }
+            },
+            {
+                label: 'Sobre Projeto',
+                accelerator: 'F10',
+                click(){
+                    menu.aboutProject();
+                }
+            }
+        ]
+    }
+]
