@@ -1,13 +1,19 @@
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDE - PROJECT</title>
+
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../plugins/css/codemirror.css">
     <link rel="stylesheet" href="../plugins/css/customCodeMirror.css">
     <script src="../plugins/js/codemirror.js"></script>
     <script src="../plugins/js/javascript.js"></script>
-</head>
+  </head>
 
-<body class="noselect">
-    <header class="titlebar" id="notitle">
+  <body class="noselect">
+      <header class="titlebar" id="notitle">
         <div id="drag-region">
             <!-- Area do icone e do menu -->
             <div class="titlebar-area menu-icon">
@@ -37,7 +43,7 @@
 
             <!-- Area do titulo -->
             <div class="titlebar-area title">
-              <span>Laravel Generate Code</span>
+              <span>IDE - PROJECT</span>
             </div>
 
             <!-- Area de controladores -->
@@ -59,31 +65,20 @@
                 </div>
               </div>
         </div>
-    </header>
+      </header>
 
-    <div class="content">
-      <div class="split-left">
-        <div class="top-left">Projeto</div>
+      <div class="content">
+        <div class="split-left">
+          <div class="top-left">Projeto</div>
+        </div>
+        <div class="split-bar"></div>
+        <div class="split-right">
+          <textarea id='codemirror'></textarea>
+        </div>
       </div>
-      <div class="split-bar"></div>
-      <div class="split-right">
-        <textarea id='teste'></textarea>
-      </div>
-    </div>
-    
-    <script src="../js/renderer.js"></script>
-    <script src="../js/menu.js"></script>
-    
-    <script>
-      $(document).ready(e => {
-        var code = $('#teste')[0];
-        var editor = CodeMirror.fromTextArea(code, {
-          lineNumbers: true,
-          mode: "javascript", 
-        })
+      
+      <script src="../js/renderer.js"></script>
+      <script src="../js/menu.js"></script>
+  </body>
 
-        editor.setSize("100%", "100%");
-      });
-
-    </script>
-</body>
+</html>

@@ -65,4 +65,3 @@ $('#about_project').click(e => {
     menu.aboutProject();
 });
 
-

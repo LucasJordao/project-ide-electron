@@ -66,3 +66,14 @@ $(document).mousemove(e => {
 $(document).mouseup(() => {
     mouse_is_down = false;
 })
+
+// CodeMirror
+$(document).ready(e => {
+    var code = $('#codemirror')[0];
+    var editor = CodeMirror.fromTextArea(code, {
+      lineNumbers: true,
+      mode: "javascript", 
+    })
+
+    editor.setSize("100%", "100%");
+});
