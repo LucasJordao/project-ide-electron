@@ -1,5 +1,9 @@
 <head>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../plugins/css/codemirror.css">
+    <link rel="stylesheet" href="../plugins/css/customCodeMirror.css">
+    <script src="../plugins/js/codemirror.js"></script>
+    <script src="../plugins/js/javascript.js"></script>
 </head>
 
 <body class="noselect">
@@ -23,7 +27,7 @@
                     <span>Sobre</span>
                     <ul class="sub-menu">
                       <li><div><span class="text-options" id="about_developer">Sobre Desenvolvedor</span> <span class="shortcut-key">F9</span></div></li>
-                      <li><div><span class="text-options" id="about_project">Sobre projeto</span> <span class="shortcut-key">F10</span></div></li>
+                      <li><div><span class="text-options" id="about_project">Sobre Projeto</span> <span class="shortcut-key">F10</span></div></li>
                     </ul>
                   </li>
                 </ul>
@@ -62,9 +66,24 @@
         <div class="top-left">Projeto</div>
       </div>
       <div class="split-bar"></div>
-      <div class="split-right"></div>
+      <div class="split-right">
+        <textarea id='teste'></textarea>
+      </div>
     </div>
     
     <script src="../js/renderer.js"></script>
     <script src="../js/menu.js"></script>
+    
+    <script>
+      $(document).ready(e => {
+        var code = $('#teste')[0];
+        var editor = CodeMirror.fromTextArea(code, {
+          lineNumbers: true,
+          mode: "javascript", 
+        })
+
+        editor.setSize("100%", "100%");
+      });
+
+    </script>
 </body>

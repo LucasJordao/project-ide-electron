@@ -1,4 +1,4 @@
-﻿const menu = require('../assets/js/menu-functions');
+﻿const menu = require('../js/menu-functions');
 var active = false;
 
 $('ul.main-menu > li > span').click(function(e) {

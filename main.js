@@ -1,6 +1,6 @@
 const { app, BrowserWindow, Menu, globalShortcut } = require('electron');
 const { resolve } = require('path');
-const menu = require('./src/assets/js/menu-functions');
+const menu = require('./src/js/menu-functions');
 let mainWindow;
 
 app.on('ready', () => {
@@ -18,8 +18,8 @@ app.on('ready', () => {
     mainWindow.maximize();
     mainWindow.show();
     mainWindow.loadURL(resolve('file://', __dirname, 'src', 'view', 'index.html'));
-    const mainMenu = Menu.buildFromTemplate(menuTemplate);
-    Menu.setApplicationMenu(mainMenu);
+    // const mainMenu = Menu.buildFromTemplate(menuTemplate);
+    // Menu.setApplicationMenu(mainMenu);
 });
 
 // app.on('browser-window-focus', function () {
@@ -45,7 +45,12 @@ const menuTemplate = [
         label: 'Arquivo',
         submenu: [
             {
-                label: 'Novo Arquivo'
+                label: 'Novo Arquivo',
+                accelerator: 'CommandOrControl + N',
+                click(){
+                    
+                }
+
             },
             {
                 label: 'Abrir Arquivo'
